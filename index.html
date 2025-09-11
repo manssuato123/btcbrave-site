@@ -4,191 +4,108 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BTCBRAVE — Token on BNB Smart Chain (BEP-20)</title>
-  <meta name="description" content="BTCBRAVE is a token on BNB Smart Chain (BEP-20), focused on transparency, community growth, and long-term sustainability." />
+  <meta name="description" content="BTCBRAVE é um token focado em transparência, crescimento comunitário e sustentabilidade a longo prazo." />
+
+  <!-- Canonical para SEO -->
+  <link rel="canonical" href="https://btcbrave.store/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://btcbrave.store/favicon.png" />
+
+  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <meta property="og:url" content="https://btcbrave.store/">
+  <meta property="og:image" content="https://btcbrave.store/preview.png">
+  <meta property="og:title" content="BTCBRAVE — Token on BNB Smart Chain (BEP-20)">
+  <meta property="og:description" content="BTCBRAVE é um token focado em transparência, comunidade e sustentabilidade.">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BTCBRAVE — Token on BNB Smart Chain (BEP-20)">
+  <meta name="twitter:description" content="BTCBRAVE é um token focado em transparência, comunidade e sustentabilidade.">
+  <meta name="twitter:image" content="https://btcbrave.store/preview.png">
+
+  <!-- Estilos principais -->
   <style>
-    :root{
-      --bg:#0b0f14;--card:#121822;--muted:#94a3b8;--text:#e6edf3;--brand:#f7b500;--brand-2:#f2f0e9;--accent:#1f2937;--ok:#16a34a;--warn:#f59e0b;
+    :root {
+      --bg:#0b0f14;
+      --card:#112822;
+      --muted:#94a3b8;
+      --text:#e6edf3;
+      --brand:#f7b500;
+      --brand-2:#f2f0e9;
+      --accent:#f2973f;
+      --ok:#16a34a;
+      --warn:#f59e0b;
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;}
-    a{color:var(--brand)} a:hover{opacity:.9}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.9}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:rgba(11,15,20,.7);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #1f2630}
-    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0}
-    .nav .links{display:flex;gap:14px;flex-wrap:wrap}
-    .badge{padding:4px 10px;border:1px solid #2a3443;border-radius:999px;font-size:12px;color:var(--muted)}
-    .hero{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:28px 0}
-    .logo{width:100px;height:100px;border-radius:20px;background:#0f141b;border:1px solid #223046;display:grid;place-items:center;overflow:hidden}
-    .logo img{max-width:100%;max-height:100%;display:block}
-    h1{font-size:clamp(28px,4vw,40px);margin:0}
-    .subtitle{color:var(--muted);margin:6px 0 0}
-    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #2a3443;background:#121822;color:var(--text);text-decoration:none}
-    .btn.primary{background:linear-gradient(180deg,#2b3443,#1b2330);border-color:#334155}
-    section{margin:34px 0}
-    .card{background:var(--card);border:1px solid #1f2630;border-radius:16px;padding:18px}
-    h2{font-size:clamp(20px,3vw,28px);margin:0 0 12px}
-    .grid{display:grid;gap:16px}
-    @media(min-width:800px){.grid.cols-2{grid-template-columns:1fr 1fr}}
-    table{width:100%;border-collapse:separate;border-spacing:0 8px}
-    th,td{text-align:left;padding:10px 12px}
-    th{color:#9fb0c2;font-weight:600}
-    tr{background:#0f141b;border:1px solid #1f2630}
-    tr td:first-child, tr th:first-child{border-top-left-radius:10px;border-bottom-left-radius:10px}
-    tr td:last-child, tr th:last-child{border-top-right-radius:10px;border-bottom-right-radius:10px}
-    .kpi{display:flex;gap:10px;align-items:center}
-    .kpi .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}
-    .muted{color:var(--muted)}
-    .pill{display:inline-block;background:#0f141b;border:1px solid #1f2630;padding:6px 10px;border-radius:999px;color:#c8d1db;font-size:12px}
-    .links-list{display:grid;gap:10px}
-    .links-list a{padding:12px 14px;border:1px solid #273142;border-radius:12px;background:#0f141b;text-decoration:none;color:#cfe2ff}
-    .timeline{display:grid;gap:14px}
-    .milestone{background:#0f141b;border:1px solid #1f2630;border-left:4px solid var(--brand);padding:12px;border-radius:12px}
-    footer{margin-top:40px;padding:20px 0;border-top:1px solid #1f2630;color:#9fb0c2}
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.show{opacity:1;transform:none}
-    [data-delay="1"]{transition-delay:.1s}
-    [data-delay="2"]{transition-delay:.2s}
-    [data-delay="3"]{transition-delay:.3s}
-    [data-delay="4"]{transition-delay:.4s}
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:50}
-    .overlay.active{display:flex}
-    .reader-wrap{width:min(1050px,92vw);height:min(82vh,820px);background:#0f141b;border:1px solid #1f2630;border-radius:18px;display:grid;grid-template-columns:320px 1fr;overflow:hidden}
-    .shelf{border-right:1px solid #1f2630;background:#0c1219;padding:16px;overflow:auto}
-    .shelf h3{margin:0 0 10px;font-size:16px;color:#cfe2ff}
-    .grid-covers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .cover{background:#121822;border:1px solid #223046;border-radius:12px;aspect-ratio:3/4;display:grid;place-items:center;padding:10px;text-align:center;cursor:pointer}
-    .cover:hover{outline:1px solid #334155}
-    .cover small{color:#9fb0c2}
-    .reader{display:grid;grid-template-rows:auto 1fr auto}
-    .reader header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #1f2630;background:#0f141b}
-    .reader header h3{margin:0;font-size:16px}
-    .page{padding:18px;overflow:auto;line-height:1.65}
-    .reader footer{display:flex;gap:8px;justify-content:flex-end;padding:10px;border-top:1px solid #1f2630}
-    .reader button{background:#0c1219;border:1px solid #223046;color:#e6edf3;border-radius:10px;padding:8px 12px;cursor:pointer}
-    .reader button:hover{border-color:#334155}
-    .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0f141b;border:1px solid #223046;color:#e6edf3;padding:10px 14px;border-radius:10px;display:none}
-    .toast.show{display:block}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0}
+    nav a{font-weight:600}
+    .hero{padding:80px 20px;text-align:center;background:linear-gradient(180deg,rgba(27,35,48,.35),rgba(11,15,20,0));border-radius:18px}
+    .hero h1{font-size:2.5rem;margin-bottom:20px}
+    .hero p{font-size:1.2rem;margin-bottom:30px;color:var(--muted)}
+    .btn{display:inline-block;padding:12px 24px;border-radius:8px;font-weight:600}
+    .btn.primary{background:linear-gradient(180deg,#3b4556,#252e3e);color:#fff;border:1px solid var(--brand);box-shadow:0 4px 20px rgba(247,181,0,.15)}
+    footer{margin-top:60px;padding:20px;text-align:center;font-size:.9rem;color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <div class="kpi"><span class="dot"></span><span class="pill">BNB Smart Chain · BEP-20</span></div>
-      <nav class="links">
-        <a href="#about">About</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#links">Links</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
-        <a href="#reading-space" id="open-reading" class="pill" style="text-decoration:none">Reading Space</a>
+    <div class="container">
+      <nav>
+        <div><strong>BTCBRAVE</strong></div>
+        <div>
+          <a href="#about">About</a>
+          <a href="#tokenomics">Tokenomics</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#contact">Contact</a>
+        </div>
       </nav>
     </div>
   </header>
-  <main class="container">
-    <div class="hero">
-      <div class="logo">
-        <img src="BTCBRAVE_logo_200.png" alt="BTCBRAVE Logo" />
-      </div>
-      <div>
-        <h1>BTCBRAVE</h1>
-        <p class="subtitle">A token on BNB Smart Chain (BEP-20) focused on transparency, community growth, and long-term sustainability.</p>
-        <div class="buttons">
-          <a class="btn primary" href="https://www.dextools.io/app/en/bnb/pair-explorer/0xe437176a0ac7a94670631924f12afff370494ffc" target="_blank" rel="noopener">View Chart</a>
-          <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank" rel="noopener">Buy</a>
-          <a class="badge" id="copy-contract" href="#" title="Copy contract to clipboard">Contract: <code>0x9a2B...3bf19</code></a>
-        </div>
-      </div>
-    </div>
-    <section id="about" class="card">
-      <h2>About</h2>
-      <p>BTCBRAVE is an early-stage project. This website provides basic information about the token, official channels, and the planned roadmap. Content is presented neutrally without promises of future performance.</p>
+
+  <section class="hero">
+    <h1>BTCBRAVE</h1>
+    <p>Token on BNB Smart Chain (BEP-20), focado em transparência, comunidade e sustentabilidade.</p>
+    <a class="btn primary" href="https://pancakeswap.finance/swap?outputCurrency=0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank">Comprar no PancakeSwap</a>
+  </section>
+
+  <div class="container">
+    <section id="about">
+      <h2>Sobre o Projeto</h2>
+      <p>BTCBRAVE nasceu para construir uma comunidade forte e fornecer um token confiável no ecossistema da BNB Smart Chain.</p>
     </section>
-    <section id="tokenomics" class="grid cols-2">
-      <div class="card reveal" data-delay="1">
-        <h2>Tokenomics</h2>
-        <table>
-          <tr class="reveal" data-delay="1"><th>Total Supply</th><td>10,000,000,000 BRAVE</td></tr>
-          <tr class="reveal" data-delay="2"><th>Decimals</th><td>8</td></tr>
-          <tr class="reveal" data-delay="3"><th>Fees</th><td>Buy 0% · Sell 0%</td></tr>
-        </table>
-      </div>
-      <div class="card reveal" data-delay="2">
-        <h2>Distribution</h2>
-        <table>
-          <tr class="reveal" data-delay="1"><th>Liquidity & Listings</th><td>50%</td></tr>
-          <tr class="reveal" data-delay="2"><th>Marketing & Partnerships</th><td>20%</td></tr>
-          <tr class="reveal" data-delay="3"><th>Development</th><td>15%</td></tr>
-          <tr class="reveal" data-delay="4"><th>Community & Rewards</th><td>10%</td></tr>
-          <tr class="reveal" data-delay="4"><th>Team Reserve</th><td>5%</td></tr>
-        </table>
-      </div>
+
+    <section id="tokenomics">
+      <h2>Tokenomics</h2>
+      <ul>
+        <li>Supply total: 10.000.000.000 BRAVE</li>
+        <li>Decimais: 8</li>
+        <li>Liquidez & Listagens: 50%</li>
+        <li>Marketing & Parcerias: 20%</li>
+        <li>Desenvolvimento: 15%</li>
+        <li>Comunidade & Recompensas: 10%</li>
+        <li>Reserva do Time: 5%</li>
+      </ul>
     </section>
-    <section id="roadmap" class="card reveal">
+
+    <section id="roadmap">
       <h2>Roadmap</h2>
-      <div class="timeline">
-        <div class="milestone">
-          <strong>Phase 1 — Launch (Q3 2025)</strong>
-          <p class="muted">Smart contract deployment, website live, official channels, and initial DEX listing.</p>
-        </div>
-        <div class="milestone">
-          <strong>Phase 2 — Expansion (Q4 2025)</strong>
-          <p class="muted">Presence on Dextools/Dexscreener, community growth, public whitepaper release.</p>
-        </div>
-        <div class="milestone">
-          <strong>Phase 3 — Consolidation (Q1 2026)</strong>
-          <p class="muted">Strategic partnerships, awareness campaigns, and new DeFi integrations.</p>
-        </div>
-      </div>
+      <p>Etapas de desenvolvimento contínuo com foco em listagens, parcerias e crescimento da comunidade.</p>
     </section>
-    <section id="links" class="card">
-      <h2>Official Links</h2>
-      <div class="links-list">
-        <a href="https://bscscan.com/address/0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank" rel="noopener">Contract on BscScan</a>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank" rel="noopener">PancakeSwap (Buy BRAVE)</a>
-        <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0xe437176a0ac7a94670631924f12afff370494ffc" target="_blank" rel="noopener">Chart on DEXTools</a>
-        <a href="https://dexscreener.com/bsc/0xe437176a0ac7a94670631924f12afff370494ffc" target="_blank" rel="noopener">Dexscreener</a>
-        <a href="#" target="_blank" rel="noopener">Telegram (soon)</a>
-        <a href="#" target="_blank" rel="noopener">Twitter / X (soon)</a>
-        <a href="#" target="_blank" rel="noopener">Discord (soon)</a>
-        <a href="#" target="_blank" rel="noopener">Whitepaper (soon)</a>
-      </div>
-      <p class="muted" style="margin-top:10px">Replace “soon” links with your official URLs once they are ready.</p>
+
+    <section id="contact">
+      <h2>Contato</h2>
+      <p>Email oficial: <a href="mailto:CONTATO@BTCBRAVE.STORE">CONTATO@BTCBRAVE.STORE</a></p>
     </section>
-    <section id="team" class="card">
-      <h2>Team</h2>
-      <p><strong>Manssuato Ferlin</strong> — Founder & Developer · <a href="https://www.linkedin.com/in/manssuato-ferlin-8b9234347" target="_blank" rel="noopener">LinkedIn</a></p>
-      <p class="muted">Based in London, United Kingdom.</p>
-    </section>
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>Official email: <a href="mailto:contato@btcbrave.store">CONTATO@BTCBRAVE.STORE</a></p>
-      <p class="muted">For general inquiries about the project. Marketing or support messages will be answered depending on availability.</p>
-    </section>
-    <footer>
-      <div class="container">
-        <div>© 2025 BTCBRAVE • BNB Smart Chain (BEP-20)</div>
-        <div class="muted">Informational content only. Not financial advice.</div>
-      </div>
-    </footer>
-  </main>
-  <div class="toast" id="toast">Copied!</div>
-<script>
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('show'); }
-  })
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-const copyBtn = document.getElementById('copy-contract');
-const toast = document.getElementById('toast');
-copyBtn?.addEventListener('click', (e)=>{
-  e.preventDefault();
-  navigator.clipboard.writeText('0x9a2B483bB0d079d0a935709760285a4c4233bf19').then(()=>{
-    toast.classList.add('show');
-    setTimeout(()=>toast.classList.remove('show'), 1200);
-  });
-});
-</script>
+  </div>
+
+  <footer>
+    <p>© 2025 BTCBRAVE — Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
