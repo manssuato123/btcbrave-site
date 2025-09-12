@@ -1,111 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BTCBRAVE — Token on BNB Smart Chain (BEP-20)</title>
-  <meta name="description" content="BTCBRAVE é um token focado em transparência, crescimento comunitário e sustentabilidade a longo prazo." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTCBRAVE — Official Token</title>
+  <meta name="description" content="BTCBRAVE is a token on BNB Smart Chain (BEP-20) focused on transparency, community and sustainability.">
 
-  <!-- Canonical para SEO -->
-  <link rel="canonical" href="https://btcbrave.store/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://btcbrave.store/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://btcbrave.store/favicon.png" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 
-  <!-- Open Graph (Facebook, WhatsApp, Telegram) -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://btcbrave.store/">
+  <meta property="og:title" content="BTCBRAVE — Official Token">
+  <meta property="og:description" content="BTCBRAVE is a token on BNB Smart Chain (BEP-20) focused on transparency, community and sustainability.">
   <meta property="og:image" content="https://btcbrave.store/preview.png">
-  <meta property="og:title" content="BTCBRAVE — Token on BNB Smart Chain (BEP-20)">
-  <meta property="og:description" content="BTCBRAVE é um token focado em transparência, comunidade e sustentabilidade.">
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BTCBRAVE — Token on BNB Smart Chain (BEP-20)">
-  <meta name="twitter:description" content="BTCBRAVE é um token focado em transparência, comunidade e sustentabilidade.">
+  <meta name="twitter:url" content="https://btcbrave.store/">
+  <meta name="twitter:title" content="BTCBRAVE — Official Token">
+  <meta name="twitter:description" content="BTCBRAVE is a token on BNB Smart Chain (BEP-20) focused on transparency, community and sustainability.">
   <meta name="twitter:image" content="https://btcbrave.store/preview.png">
 
-  <!-- Estilos principais -->
   <style>
-    :root {
-      --bg:#0b0f14;
-      --card:#112822;
-      --muted:#94a3b8;
-      --text:#e6edf3;
-      --brand:#f7b500;
-      --brand-2:#f2f0e9;
-      --accent:#f2973f;
-      --ok:#16a34a;
-      --warn:#f59e0b;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{opacity:.9}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(11,15,20,.7);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #1f2630}
-    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0}
-    nav a{font-weight:600}
-    .hero{padding:80px 20px;text-align:center;background:linear-gradient(180deg,rgba(27,35,48,.35),rgba(11,15,20,0));border-radius:18px}
-    .hero h1{font-size:2.5rem;margin-bottom:20px}
-    .hero p{font-size:1.2rem;margin-bottom:30px;color:var(--muted)}
-    .btn{display:inline-block;padding:12px 24px;border-radius:8px;font-weight:600}
-    .btn.primary{background:linear-gradient(180deg,#3b4556,#252e3e);color:#fff;border:1px solid var(--brand);box-shadow:0 4px 20px rgba(247,181,0,.15)}
-    footer{margin-top:60px;padding:20px;text-align:center;font-size:.9rem;color:var(--muted)}
+    body { margin:0; font-family: Arial, sans-serif; background:#0b0f19; color:#fff; }
+    header { background:#111; padding:20px; text-align:center; }
+    header h1 { margin:0; color:#f5c542; }
+    nav a { margin:0 15px; color:#f5c542; text-decoration:none; }
+    section { padding:50px 20px; max-width:1000px; margin:auto; }
+    h2 { color:#f5c542; }
+    footer { background:#111; padding:20px; text-align:center; color:#999; }
+    .btn { background:#f5c542; color:#000; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold; }
+    .btn:hover { background:#ffd84d; }
+    .tokenomics-table { width:100%; border-collapse:collapse; margin-top:20px; }
+    .tokenomics-table th, .tokenomics-table td { border:1px solid #555; padding:10px; text-align:left; }
+    .roadmap-step { margin:20px 0; padding:15px; border-left:4px solid #f5c542; background:#1a1f2e; }
+    .overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); color:#fff; overflow:auto; padding:40px; }
+    .overlay h2 { margin-top:0; }
+    .close-btn { color:#f5c542; float:right; font-size:24px; cursor:pointer; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div><strong>BTCBRAVE</strong></div>
-        <div>
-          <a href="#about">About</a>
-          <a href="#tokenomics">Tokenomics</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero">
-    <h1>BTCBRAVE</h1>
-    <p>Token on BNB Smart Chain (BEP-20), focado em transparência, comunidade e sustentabilidade.</p>
-    <a class="btn primary" href="https://pancakeswap.finance/swap?outputCurrency=0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank">Comprar no PancakeSwap</a>
-  </section>
+<header>
+  <h1>BTCBRAVE</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#ebooks">Reading Space</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="container">
-    <section id="about">
-      <h2>Sobre o Projeto</h2>
-      <p>BTCBRAVE nasceu para construir uma comunidade forte e fornecer um token confiável no ecossistema da BNB Smart Chain.</p>
-    </section>
+<section id="about">
+  <h2>About BTCBRAVE</h2>
+  <p>BTCBRAVE is a community-driven token built on BNB Smart Chain (BEP-20). Our focus is on transparency, community empowerment and sustainable growth.</p>
+  <p><strong>Contract Address:</strong> 
+    <span id="contract">0x9a2B483bB0d079d0a935709760285a4c4233bf19</span> 
+    <button onclick="copyContract()">Copy</button>
+  </p>
+  <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank">Buy on PancakeSwap</a>
+</section>
 
-    <section id="tokenomics">
-      <h2>Tokenomics</h2>
-      <ul>
-        <li>Supply total: 10.000.000.000 BRAVE</li>
-        <li>Decimais: 8</li>
-        <li>Liquidez & Listagens: 50%</li>
-        <li>Marketing & Parcerias: 20%</li>
-        <li>Desenvolvimento: 15%</li>
-        <li>Comunidade & Recompensas: 10%</li>
-        <li>Reserva do Time: 5%</li>
-      </ul>
-    </section>
+<section id="tokenomics">
+  <h2>Tokenomics</h2>
+  <table class="tokenomics-table">
+    <tr><th>Category</th><th>Allocation</th></tr>
+    <tr><td>Liquidity & Listings</td><td>50%</td></tr>
+    <tr><td>Marketing & Partnerships</td><td>20%</td></tr>
+    <tr><td>Development</td><td>15%</td></tr>
+    <tr><td>Community & Rewards</td><td>10%</td></tr>
+    <tr><td>Team Reserve</td><td>5%</td></tr>
+  </table>
+  <p>Max Supply: 10,000,000,000 BRAVE — Decimals: 8</p>
+</section>
 
-    <section id="roadmap">
-      <h2>Roadmap</h2>
-      <p>Etapas de desenvolvimento contínuo com foco em listagens, parcerias e crescimento da comunidade.</p>
-    </section>
+<section id="roadmap">
+  <h2>Roadmap</h2>
+  <div class="roadmap-step"><strong>Phase 1:</strong> Token launch, BscScan verification, liquidity pool creation.</div>
+  <div class="roadmap-step"><strong>Phase 2:</strong> Community growth, social media launch, marketing campaigns.</div>
+  <div class="roadmap-step"><strong>Phase 3:</strong> CEX listings, partnerships, expansion of Reading Space.</div>
+  <div class="roadmap-step"><strong>Phase 4:</strong> Ecosystem development, new utilities, global adoption.</div>
+</section>
 
-    <section id="contact">
-      <h2>Contato</h2>
-      <p>Email oficial: <a href="mailto:CONTATO@BTCBRAVE.STORE">CONTATO@BTCBRAVE.STORE</a></p>
-    </section>
-  </div>
+<section id="ebooks">
+  <h2>Reading Space</h2>
+  <p>Learn more about blockchain, crypto and finance with our educational eBooks. Click a title to start reading:</p>
+  <ul>
+    <li><a href="#" onclick="openBook('book1')">📘 Blockchain 101</a></li>
+    <li><a href="#" onclick="openBook('book2')">📗 Wallet Safety</a></li>
+    <li><a href="#" onclick="openBook('book3')">📙 DeFi Essentials</a></li>
+    <li><a href="#" onclick="openBook('book4')">📕 About BTCBRAVE</a></li>
+  </ul>
+</section>
 
-  <footer>
-    <p>© 2025 BTCBRAVE — Todos os direitos reservados.</p>
-  </footer>
+<div id="book1" class="overlay">
+  <span class="close-btn" onclick="closeBook('book1')">&times;</span>
+  <h2>Blockchain 101</h2>
+  <p>Blockchain is a decentralized ledger technology that ensures transparency and security...</p>
+</div>
+<div id="book2" class="overlay">
+  <span class="close-btn" onclick="closeBook('book2')">&times;</span>
+  <h2>Wallet Safety</h2>
+  <p>Always keep your private keys secure and never share your seed phrase...</p>
+</div>
+<div id="book3" class="overlay">
+  <span class="close-btn" onclick="closeBook('book3')">&times;</span>
+  <h2>DeFi Essentials</h2>
+  <p>Decentralized Finance (DeFi) allows anyone to access financial services without intermediaries...</p>
+</div>
+<div id="book4" class="overlay">
+  <span class="close-btn" onclick="closeBook('book4')">&times;</span>
+  <h2>About BTCBRAVE</h2>
+  <p>BTCBRAVE is more than a token — it’s a community project with the goal of building knowledge and opportunities in crypto.</p>
+</div>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:CONTATO@BTCBRAVE.STORE">CONTATO@BTCBRAVE.STORE</a></p>
+  <p>Official Links:</p>
+  <ul>
+    <li><a href="https://bscscan.com/address/0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank">BscScan</a></li>
+    <li><a href="https://pancakeswap.finance/swap?outputCurrency=0x9a2B483bB0d079d0a935709760285a4c4233bf19" target="_blank">PancakeSwap</a></li>
+    <li><a href="https://www.dextools.io/app/en/bnb/pair-explorer/0xe437176a0ac7a94670631924f12afff370494ffc" target="_blank">DEXTools</a></li>
+    <li><a href="https://dexscreener.com" target="_blank">Dexscreener</a></li>
+    <li>Telegram (coming soon)</li>
+    <li>Twitter/X (coming soon)</li>
+    <li>Discord (coming soon)</li>
+    <li>Whitepaper (coming soon)</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 BTCBRAVE — All rights reserved.</p>
+</footer>
+
+<script>
+  function copyContract() {
+    navigator.clipboard.writeText(document.getElementById("contract").innerText);
+    alert("Contract copied!");
+  }
+  function openBook(id) {
+    document.getElementById(id).style.display="block";
+  }
+  function closeBook(id) {
+    document.getElementById(id).style.display="none";
+  }
+</script>
+
 </body>
 </html>
