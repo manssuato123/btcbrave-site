@@ -5,29 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BTCBRAVE — Token on BNB Smart Chain (BEP-20)</title>
   <meta name="description" content="BTCBRAVE is a token on BNB Smart Chain (BEP-20), focused on transparency, community growth, and long-term sustainability." />
-<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     :root{
       --bg:#0b0f14;--card:#121822;--muted:#94a3b8;--text:#e6edf3;--brand:#f7b500;--brand-2:#f2f0e9;--accent:#1f2937;--ok:#16a34a;--warn:#f59e0b;
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;}
-    a{color:var(--brand)} a:hover{opacity:.9}
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+    }
+    a{color:var(--brand)}
+    a:hover{opacity:.9}
     .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(11,15,20,.7);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #1f2630}
-    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 0}
+    header{
+      position:sticky;
+      top:0;
+      background:rgba(11,15,20,.7);
+      backdrop-filter:blur(8px);
+      z-index:10;
+      border-bottom:1px solid #1f2630
+    }
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 0
+    }
     .nav .links{display:flex;gap:14px;flex-wrap:wrap}
-    .badge{padding:4px 10px;border:1px solid #2a3443;border-radius:999px;font-size:12px;color:var(--muted)}
-    .hero{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:28px 0}
-    .logo{width:100px;height:100px;border-radius:20px;background:#0f141b;border:1px solid #223046;display:grid;place-items:center;overflow:hidden}
+    .badge{
+      padding:4px 10px;
+      border:1px solid #2a3443;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted)
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:16px;
+      align-items:center;
+      padding:28px 0
+    }
+    .logo{
+      width:100px;
+      height:100px;
+      border-radius:20px;
+      background:#0f141b;
+      border:1px solid #223046;
+      display:grid;
+      place-items:center;
+      overflow:hidden
+    }
     .logo img{max-width:100%;max-height:100%;display:block}
     h1{font-size:clamp(28px,4vw,40px);margin:0}
     .subtitle{color:var(--muted);margin:6px 0 0}
     .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #2a3443;background:#121822;color:#text;text-decoration:none}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid #2a3443;
+      background:#121822;
+      color:var(--text);
+      text-decoration:none
+    }
     .btn.primary{background:linear-gradient(180deg,#2b3443,#1b2330);border-color:#334155}
     section{margin:34px 0}
-    .card{background:var(--card);border:1px solid #1f2630;border-radius:16px;padding:18px}
+    .card{
+      background:var(--card);
+      border:1px solid #1f2630;
+      border-radius:16px;
+      padding:18px
+    }
     h2{font-size:clamp(20px,3vw,28px);margin:0 0 12px}
     .grid{display:grid;gap:16px}
     @media(min-width:800px){.grid.cols-2{grid-template-columns:1fr 1fr}}
@@ -35,41 +92,180 @@
     th,td{text-align:left;padding:10px 12px}
     th{color:#9fb0c2;font-weight:600}
     tr{background:#0f141b;border:1px solid #1f2630}
-    tr td:first-child, tr th:first-child{border-top-left-radius:10px;border-bottom-left-radius:10px}
-    tr td:last-child, tr th:last-child{border-top-right-radius:10px;border-bottom-right-radius:10px}
+    tr td:first-child, tr th:first-child{
+      border-top-left-radius:10px;
+      border-bottom-left-radius:10px
+    }
+    tr td:last-child, tr th:last-child{
+      border-top-right-radius:10px;
+      border-bottom-right-radius:10px
+    }
     .kpi{display:flex;gap:10px;align-items:center}
-    .kpi .dot{width:10px;height:10px;border-radius:50%;background:var(--brand)}
+    .kpi .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--brand)
+    }
     .muted{color:var(--muted)}
-    .pill{display:inline-block;background:#0f141b;border:1px solid #1f2630;padding:6px 10px;border-radius:999px;color:#c8d1db;font-size:12px}
+    .pill{
+      display:inline-block;
+      background:#0f141b;
+      border:1px solid #1f2630;
+      padding:6px 10px;
+      border-radius:999px;
+      color:#c8d1db;
+      font-size:12px
+    }
     .links-list{display:grid;gap:10px}
-    .links-list a{padding:12px 14px;border:1px solid #273142;border-radius:12px;background:#0f141b;text-decoration:none;color:#cfe2ff}
+    .links-list a{
+      padding:12px 14px;
+      border:1px solid #273142;
+      border-radius:12px;
+      background:#0f141b;
+      text-decoration:none;
+      color:#cfe2ff
+    }
     .timeline{display:grid;gap:14px}
-    .milestone{background:#0f141b;border:1px solid #1f2630;border-left:4px solid var(--brand);padding:12px;border-radius:12px}
-    footer{margin-top:40px;padding:20px 0;border-top:1px solid #1f2630;color:#9fb0c2}
+    .milestone{
+      background:#0f141b;
+      border:1px solid #1f2630;
+      border-left:4px solid var(--brand);
+      padding:12px;
+      border-radius:12px
+    }
+    footer{
+      margin-top:40px;
+      padding:20px 0;
+      border-top:1px solid #1f2630;
+      color:#9fb0c2
+    }
     /* Scroll reveal */
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.show{opacity:1;transform:none}
+    .reveal{
+      opacity:0;
+      transform:translateY(16px);
+      transition:opacity .6s ease, transform .6s ease
+    }
+    .reveal.show{
+      opacity:1;
+      transform:none
+    }
     [data-delay="1"]{transition-delay:.1s}
     [data-delay="2"]{transition-delay:.2s}
     [data-delay="3"]{transition-delay:.3s}
     [data-delay="4"]{transition-delay:.4s}
     /* Reading Space */
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:50}
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(6px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:50
+    }
     .overlay.active{display:flex}
-    .reader-wrap{width:min(1050px,92vw);height:min(82vh,820px);background:#0f141b;border:1px solid #1f2630;border-radius:18px;display:grid;grid-template-columns:320px 1fr;overflow:hidden}
-    .shelf{border-right:1px solid #1f2630;background:#0c1219;padding:16px;overflow:auto}
-    .shelf h3{margin:0 0 10px;font-size:16px;color:#cfe2ff}
-    .grid-covers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .cover{background:#121822;border:1px solid #223046;border-radius:12px;aspect-ratio:3/4;display:grid;place-items:center;padding:10px;text-align:center;cursor:pointer}
+    .reader-wrap{
+      width:min(1050px,92vw);
+      height:min(82vh,820px);
+      background:#0f141b;
+      border:1px solid #1f2630;
+      border-radius:18px;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      overflow:hidden
+    }
+    .shelf{
+      border-right:1px solid #1f2630;
+      background:#0c1219;
+      padding:16px;
+      overflow:auto
+    }
+    .shelf h3{
+      margin:0 0 10px;
+      font-size:16px;
+      color:#cfe2ff
+    }
+    .grid-covers{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px
+    }
+    .cover{
+      background:#121822;
+      border:1px solid #223046;
+      border-radius:12px;
+      aspect-ratio:3/4;
+      display:grid;
+      place-items:center;
+      padding:10px;
+      text-align:center;
+      cursor:pointer
+    }
     .cover:hover{outline:1px solid #334155}
     .cover small{color:#9fb0c2}
     .reader{display:grid;grid-template-rows:auto 1fr auto}
-    .reader header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #1f2630;background:#0f141b}
+    .reader header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid #1f2630;
+      background:#0f141b
+    }
     .reader header h3{margin:0;font-size:16px}
-    .page{padding:18px;overflow:auto;line-height:1.65}
-    .reader footer{display:flex;gap:8px;justify-content:flex-end;padding:10px;border-top:1px solid #1f2630}
-    .reader button{background:#0c1219;border:1px solid #223046;color:#e6edf3;border-radius:10px;padding:8px 12px;cursor:pointer}
+    .page{
+      padding:18px;
+      overflow:auto;
+      line-height:1.65
+    }
+    .reader footer{
+      display:flex;
+      gap:8px;
+      justify-content:flex-end;
+      padding:10px;
+      border-top:1px solid #1f2630
+    }
+    .reader button{
+      background:#0c1219;
+      border:1px solid #223046;
+      color:#e6edf3;
+      border-radius:10px;
+      padding:8px 12px;
+      cursor:pointer
+    }
     .reader button:hover{border-color:#334155}
+
+    /* BTCBRAVE NEWS ICON - TOP RIGHT */
+    .btcbrave-news-float{
+      position:fixed;
+      top:18px;
+      right:26px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-decoration:none;
+      z-index:100;
+    }
+    .btcbrave-news-float img{
+      width:55px;
+      height:55px;
+      object-fit:cover;
+      border-radius:50%;
+      border:2px solid var(--brand);
+      background:#020308;
+      padding:4px;
+      box-shadow:0 0 16px rgba(247,181,0,0.45);
+    }
+    .btcbrave-news-float span{
+      margin-top:3px;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:1px;
+      color:var(--brand);
+      text-shadow:0 0 6px rgba(0,0,0,0.7);
+    }
   </style>
 </head>
 <body>
@@ -81,13 +277,18 @@
         <a href="#tokenomics">Tokenomics</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#links">Links</a>
-        <a href="#burn-events">Burn Events</a> <!-- 🔥 novo link -->
+        <a href="#burn-events">Burn Events</a>
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
-        
       </nav>
     </div>
   </header>
+
+  <!-- BTCBRAVE NEWS BUTTON (TOP RIGHT) -->
+  <a href="https://news.btcbrave.store" target="_blank" class="btcbrave-news-float">
+    <img src="bbb.png" alt="BTCBRAVE News">
+    <span>News</span>
+  </a>
 
   <main class="container">
     <div class="hero">
@@ -98,9 +299,32 @@
         <h1>BTCBRAVE</h1>
         <p class="subtitle">A token on BNB Smart Chain (BEP-20) focused on transparency, community growth, and long-term sustainability.</p>
         <div class="buttons">
-         <a class="btn" href="https://www.dextools.io/app/en/bnb/pair-explorer/0x88e416875dd68631148809eb77e776f5a3d6f2ed5669be7bd7693a23dc03d244" target="_blank" rel="noopener">View Chart</a>
-         <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x9A2B483Bb0D079d0A935709760285a4c4233bf19" target="_blank" rel="noopener">Buy</a>
-         <span class="badge">Contract: <code>0x9a2B483bB0d079d0a935709760285a4c4233bf19</code></span>
+          <a class="btn" href="https://www.dextools.io/app/en/bnb/pair-explorer/0x88e416875dd68631148809eb77e776f5a3d6f2ed5669be7bd7693a23dc03d244" target="_blank" rel="noopener">View Chart</a>
+          <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x9A2B483Bb0D079d0A935709760285a4c4233bf19" target="_blank" rel="noopener">Buy</a>
+
+          <!-- Contract + COPY -->
+          <span class="badge" style="display:flex;align-items:center;gap:6px;">
+            <span>Contract:</span>
+            <span 
+              id="contractHero" 
+              style="font-family:monospace; color:#9fd;">
+              0x9A2B483Bb0D079d0A935709760285a4c4233bf19
+            </span>
+            <button 
+              type="button"
+              onclick="copyContract()"
+              style="
+                background:#0f141b;
+                border:1px solid #1f2630;
+                color:var(--text);
+                border-radius:8px;
+                padding:2px 8px;
+                font-size:11px;
+                cursor:pointer;
+              ">
+              Copy
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -165,39 +389,37 @@
     </section>
     
     <!-- 🔥 Burn Events -->
-<section id="burn-events" class="card">
-  <h2>🔥 Burn Events</h2>
+    <section id="burn-events" class="card">
+      <h2>🔥 Burn Events</h2>
 
-  <!-- Burn #1 -->
-  <p>✅ <strong>500,000,000 BRAVE</strong> burned on <strong>19 October 2025</strong>.</p>
-  <p class="muted">
-    Transaction hash:
-    <a href="https://bscscan.com/tx/0xca3b8408baa09485575502a02d4c9afc80d2e2b8158987fbc90085533fe490d" target="_blank">
-      View on BscScan
-    </a>
-    — tokens were sent to the dead address
-    <span style="font-family:monospace; color:#9fd;">
-      0x000000000000000000000000000000000000dEaD
-    </span>.
-  </p>
+      <!-- Burn #1 -->
+      <p>✅ <strong>500,000,000 BRAVE</strong> burned on <strong>19 October 2025</strong>.</p>
+      <p class="muted">
+        Transaction hash:
+        <a href="https://bscscan.com/tx/0xca3b8408baa09485575502a02d4c9afc80d2e2b8158987fbc90085533fe490d" target="_blank">
+          View on BscScan
+        </a>
+        — tokens were sent to the dead address
+        <span style="font-family:monospace; color:#9fd;">
+          0x000000000000000000000000000000000000dEaD
+        </span>.
+      </p>
 
-  <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
+      <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
 
-  <!-- Burn #2 -->
-  <p>✅ <strong>500,000,000 BRAVE</strong> burned on <strong>19 November 2025</strong>.</p>
-  <p class="muted">
-    Transaction hash:
-    <a href="https://bscscan.com/tx/0x2f85b67689254300945abdf3c1ab79c0b5e9a2d7c9092bb9a031e9a6fd383d9d" target="_blank">
-      View on BscScan
-    </a>
-    — tokens were sent to the dead address
-    <span style="font-family:monospace; color:#9fd;">
-      0x000000000000000000000000000000000000dEaD
-    </span>.
-  </p>
-
-</section>
-
+      <!-- Burn #2 -->
+      <p>✅ <strong>500,000,000 BRAVE</strong> burned on <strong>19 November 2025</strong>.</p>
+      <p class="muted">
+        Transaction hash:
+        <a href="https://bscscan.com/tx/0x2f85b67689254300945abdf3c1ab79c0b5e9a2d7c9092bb9a031e9a6fd383d9d" target="_blank">
+          View on BscScan
+        </a>
+        — tokens were sent to the dead address
+        <span style="font-family:monospace; color:#9fd;">
+          0x000000000000000000000000000000000000dEaD
+        </span>.
+      </p>
+    </section>
 
     <section id="team" class="card">
       <h2>Team</h2>
@@ -241,7 +463,13 @@
   </div>
 
 <script>
-const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');}})},{threshold:.12});
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+    }
+  })
+},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const openBtn=document.getElementById('open-reading');
 const overlay=document.getElementById('reading-space');
@@ -258,10 +486,57 @@ const BOOKS={
   btcbrave:{title:'About BTCBRAVE',pages:[`BTCBRAVE is a BEP-20 token`,`Total supply: 10B BRAVE`,`Follow official channels`]}
 };
 let current={key:null,page:0};
-function loadBook(key){const b=BOOKS[key];if(!b)return;current={key,page:0};titleEl.textContent=b.title;pageEl.textContent=b.pages[0];}
+function loadBook(key){
+  const b=BOOKS[key];
+  if(!b)return;
+  current={key,page:0};
+  titleEl.textContent=b.title;
+  pageEl.textContent=b.pages[0];
+}
 document.querySelectorAll('.cover').forEach(c=>c.addEventListener('click',()=>loadBook(c.dataset.book)));
-document.getElementById('next-page').addEventListener('click',()=>{if(!current.key)return;const b=BOOKS[current.key];current.page=Math.min(current.page+1,b.pages.length-1);pageEl.textContent=b.pages[current.page];});
-document.getElementById('prev-page').addEventListener('click',()=>{if(!current.key)return;const b=BOOKS[current.key];current.page=Math.max(current.page-1,0);pageEl.textContent=b.pages[current.page];});
+document.getElementById('next-page').addEventListener('click',()=>{
+  if(!current.key)return;
+  const b=BOOKS[current.key];
+  current.page=Math.min(current.page+1,b.pages.length-1);
+  pageEl.textContent=b.pages[current.page];
+});
+document.getElementById('prev-page').addEventListener('click',()=>{
+  if(!current.key)return;
+  const b=BOOKS[current.key];
+  current.page=Math.max(current.page-1,0);
+  pageEl.textContent=b.pages[current.page];
+});
+
+/* COPY CONTRACT – HERO */
+function copyContract(){
+  const el = document.getElementById('contractHero');
+  if(!el) return;
+  const text = el.textContent.trim();
+
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>{
+      alert('Contract copied: ' + text);
+    }).catch(()=>{
+      fallbackCopy(text);
+    });
+  }else{
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text){
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  try{
+    document.execCommand('copy');
+    alert('Contract copied: ' + text);
+  }catch(e){
+    alert('Could not copy. Please copy manually: ' + text);
+  }
+  document.body.removeChild(textarea);
+}
 </script>
 </body>
 </html>
